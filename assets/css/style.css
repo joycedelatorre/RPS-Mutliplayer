@@ -1,0 +1,54 @@
+@font-face{
+	font-family: "FULLAMAK";
+	src:url("FULLAMAK/Fullamak.ttf");
+}
+body{
+	background-image:url("../images/background-image.png");
+}
+.banner{
+	height:100px;
+	font-weight: bold;
+	font-family: FULLAMAK;
+	font-size: 50px;
+	text-align: center;
+	color:yellowgreen;
+}
+.pad{
+	height:20px;
+}
+
+.gameField{
+	background-color: yellow;
+	height:400px;
+
+}
+.players{
+	border: 2px solid grey;
+	text-align:center;
+}
+.chat-banner{
+	background-color: green;
+	font-weight: bold;
+	font-family: serif arial;
+	font-size: 30px;
+	padding:10px;
+}
+.chat{
+	font-weight: bold;
+	font-family: serif arial;
+	font-size: 20px;
+	text-align: center;
+}
+.label{
+	color:yellowgreen;
+	font-size: 40px;
+	font-family: FULLAMAK;
+}
+.displayMessage{
+	height:200px;
+	border: 2px solid grey;
+	background-color:white;
+}
+
+
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="eng-us">
+
+<head>
+	<meta charset="UTF-8">
+	<title>RPS-Multiplayer</title>
+	<!--My own CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+
+	<!-- bootstrap (no reset because I used bootstrap) --> 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- JQUERY -->
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<!-- FIREBASE -->
+	<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+	<!-- JAVASCRIPT -->
+	<script type="text/javascript" src="assets/javascript/app.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row banner">
+			<div class="col-lg-1"></div>
+			<div class="col-lg-10"> Rock Paper and Scissors</div>
+			<div class="col-lg-1"></div>
+		</div>
+		<br>
+		<div class="row"></div><!--padding-->
+		<br>
+		<div class="row gameField">
+			<div class="col players" id="player1">
+				<div class="row" id="p1">Player1</div>
+				<div class="row"> 
+					<div class="col icons player1" id="rock_1"><img src="assets/images/rock-icon.png"></div>
+					<div class="col icons player1" id="paper_1"><img src="assets/images/paper-icon.png"></div>
+					<div class="col icons player1" id="scissors_1"><img src="assets/images/scissors-icon.png"></div>
+				</div>
+				<div class="row scoreboard">
+					scores
+				</div>
+			</div>
+			<div class="col players">
+				<div class="row" id="p2">Player2</div>
+				<div class="row">
+					<div class="col icons player2" id="rock_2"><img src="assets/images/rock-icon.png"></div>
+					<div class="col icons player2" id="paper_2"><img src="assets/images/paper-icon.png"></div>
+					<div class="col icons player2" id="scissors_2"><img src="assets/images/scissors-icon.png"></div>
+				</div>
+				<div class="row scoreboard">
+					scores
+				</div>
+			</div>
+		</div>
+
+		<div class="row pad"></div> <!--padding-->
+
+		<div class="row chat">
+			<div class="col-lg-2 label">CHAT</div>
+			<div class="col-lg-8 displayMessage" id="displayMessage"></div>
+			<div class="col-lg-2"></div>
+
+			<div class="col-lg-2"></div>
+			<div class="col-lg-8">
+				<br>
+				<textarea class="form-control mess" id="exampleFormControlTextarea1" rows="3" cols="50"></textarea>
+				<br>
+				<div class="col-auto">
+			      <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+			    </div>
+			</div>
+			<div class="col-lg-2"></div>
+				  
+				 
+			</form>
+		</div>
+
+	</div>
+</body>
+</html>
