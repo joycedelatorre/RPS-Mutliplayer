@@ -23,10 +23,12 @@ $(document).ready(function(){
 	firebase.initializeApp(config);
 
 	var database = firebase.database();
+//---------------------chat app---------------------------------------------	
 	var chatRef = database.ref("/chat");
 	chatRef.on("value", function(snapshot){
 		$("#displayMessage").append("<div>"+snapshot.val()+"</div>");
 	})
+//-----------------------------------------------------------------------	
 	var ourConnectionsRef= database.ref("/connections");
 	var googleConnectedRef= database.ref(".info/connected"); 
 
@@ -48,6 +50,8 @@ $(document).ready(function(){
 	    //console.log("--->"+ Object.keys(o)[0]);
 	    var numConn = snap.numChildren();
 	    // console.log("numconn" + numConn);
+
+//---------------------PLAYER 1 PICKING AN ANSWER-----------------------------
 	     	if(numConn === 1) {
 	     		player1 = Object.keys(o)[0];
 	     		//console.log(player1);
@@ -78,19 +82,7 @@ $(document).ready(function(){
 		     		$("#rock_1").hide();
 		     		$("#paper_1").hide();
 	     		});
-//------------------------------chat app for player 1--------------------------------------
-		     	// $("#submit").on("click", function(){
-		     	// 	var message = $(".mess").val().trim();
-		     	// 	//$("#displayMessage").append(message);
-		     	// 	var meRef=database.ref("/connections/"+me).set({
-		     	// 		message:message
-		     	// 	});
-		     	// 	database.ref("/connections/"+me).on("child_added", function(childSnapshot, prevChildKey){
-		     	// 		console.log(childSnapshot.val().message);
-		     	// 	})
-		     	// 	// console.log(message);
-		     	// });
-//-----------------------------------------------------------------------------------------------
+//------------------player2 picking an answer----------------------------------------------------
 	     	//console.log(player1);
 		    } else if(numConn === 2) {
 		     	player2 = Object.keys(o)[1];
@@ -122,15 +114,6 @@ $(document).ready(function(){
 			     		$("#rock_2").hide();
 			     		$("#paper_2").hide();
 			     	});
-	//------------------------------chat app for player 2--------------------------------------
-			     	// $("#submit").on("click", function(){
-			     	// 	var message = $(".mess").val().trim();
-			     	// 	var meRef=database.ref("/connections/"+me).set({
-			     	// 		message:message
-			     	// 	});
-			     	// });
-			    }// end of if(me===null)
-	//--------------------------------------------------------------------------------------
 	     	} else {
 			     	if(me===null){
 			     		$(".container").hide();
@@ -181,11 +164,9 @@ $(document).ready(function(){
 				//pictures too so both player can see the guessed answers
 				//RESULTS ARE DISPLAYED ON THE CONSOLE.
 			}
-			// if ((answer1 != null) && (answer2 != null)){
-			// 	console.log("check");
-			// }
 		}
 	});
+	//---------------------submit function is for Chat -------------------------------------
 	$("#submit").on("click",function(){
 		var msg = $(".mess").val().trim();
 		if(me === player1){
@@ -202,61 +183,5 @@ $(document).ready(function(){
 
 
 
-// $("#submit").on("click", function(){
-	// 	var message = $(".mess").val().trim();
-	// 	var meRef=database.ref("/connections/"+me).set({
-	// 		message:message
-	// 	});
-	// });
 
 
-
-
-
-// }); //document.ready (end)
-// var wins = 0;
-// var losses = 0;
-// var ties = 0;
-// var names = ["rock", "paper", "scissors"];
-//user key converted to number: r=0, p=1, s=2
-// // random number generated: 0, 1, 2
-// function play(u) {
-// 	var c = Math.floor(Math.random() * 3)
-// 	// wins number
-// 	// losses number
-// 	if (c === u) {
-// 		ties += 1;
-// 		console.log("You Tied. You and the computer picked: " + names[u]);
-// 	} else if (u === 0 && c === 2 || u === 1 && c === 0 || u === 2 && c === 1) {
-// 		wins += 1;
-// 		//console.log("You Win! You picked: " + names[u] + ", computer picked: " + names[c]);
-// 	} else {
-// 		losses += 1;
-// 		//console.log("You Lost! You picked: " + names[u] + ", computer picked: " + names[c]);
-// 	}
-// 	document.getElementById("UserPick").textContent = names[u];
-// 	document.getElementById("CompPick").textContent = names[c];
-// 	document.getElementById("Wins").textContent = wins.toString();
-// 	document.getElementById("Losses").textContent = losses.toString();
-// 	document.getElementById("Ties").textContent = ties.toString();
-// }
-
-// document.onkeypress = function(event) {
-// 	var key = event.keyCode;
-// 	var cKey = String.fromCharCode(key).toLowerCase()
-// 	switch(cKey) {
-// 	    case "r":
-// 	        play(0);
-// 	        break;
-// 	    case "p":
-// 	        play(1);
-// 	        break;
-// 	    case "s":
-// 	    	play(2);
-// 	        break;
-// 	     default:
-// 	     	alert("Hey wrong key! Press (r p s) only.");
-// 	}
-// };
-
-//--------------------------------chat application
